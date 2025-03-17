@@ -87,7 +87,7 @@ export const config: wdi5Config = {
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
-    //
+    //const userDataDir = `/tmp/chrome-user-data-dir-${Date.now()}`;
     capabilities: [
         {
             // maxInstances can get overwritten per capability. So if you have an in-house Selenium
@@ -98,12 +98,12 @@ export const config: wdi5Config = {
             "goog:chromeOptions": {
                 args: [
                     ...(process.argv.indexOf("--headless") > -1
-                      ? ["--headless=new"]
-                      : process.argv.indexOf("--debug") > -1
-                      ? ["window-size=1440,800", "--auto-open-devtools-for-tabs"]
-                      : ["window-size=1440,800"]),
-                    "--user-data-dir=/path/to/unique/directory" // Add unique user data dir argument here
-                  ]
+                        ? ["--headless=new"]
+                        : process.argv.indexOf("--debug") > -1
+                            ? ["window-size=1440,800", "--auto-open-devtools-for-tabs"]
+                            : ["window-size=1440,800"]),
+                    "--user-data-dir=/tmp/chrome-user-data-dir-${Date.now()}" // Add unique user data dir argument here
+                ]
             },
             acceptInsecureCerts: true
             // If outputDir is provided WebdriverIO can capture driver session logs
