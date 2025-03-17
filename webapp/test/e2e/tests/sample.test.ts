@@ -38,13 +38,13 @@ describe("basic usage", () => {
         await compleateButton.focus()
         await compleateButton.firePress()
 
-         const allButtonControl: unknown = await browser.asControl(MainPage.allButton())
+        const allButtonControl: unknown = await browser.asControl(MainPage.allButton())
         const allButton = allButtonControl as Button
 
         await allButton.focus()
         await allButton.firePress()
 
 
-        await browser.pause(10000)
+        await browser.pause(5000)
     })
 })
