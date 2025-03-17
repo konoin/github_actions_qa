@@ -24,8 +24,6 @@ jobs:
 
       - name: Set up Chrome
         uses: googlechrome/setup-chrome@v2
-        with:
-          chrome-version: 'stable'
 
       - name: Run and build site
         run: |
