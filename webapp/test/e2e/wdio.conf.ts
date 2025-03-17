@@ -102,7 +102,7 @@ export const config: wdi5Config = {
                         : process.argv.indexOf("--debug") > -1
                             ? ["window-size=1440,800", "--auto-open-devtools-for-tabs"]
                             : ["window-size=1440,800"]),
-                    "--user-data-dir=/tmp/chrome-user-data-dir-${Date.now()}" // Add unique user data dir argument here
+                    // "--user-data-dir=/tmp/chrome-user-data-dir-${Date.now()}" // Add unique user data dir argument here
                 ]
             },
             acceptInsecureCerts: true
