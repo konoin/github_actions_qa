@@ -11,7 +11,11 @@
         "strictPropertyInitialization": false,
         "rootDir": "./src",
         "outDir": "./webapp",
-        "baseUrl": "./"
+        "baseUrl": "./",
+        "typeRoots": [
+            "node_modules/@types",
+            "node_modules/webdriverio/types"
+          ]
     },
     "include": [
         "./src/**/*"
