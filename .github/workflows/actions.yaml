@@ -25,7 +25,7 @@ jobs:
 
       - name: Run and build site
         run: |
-          npm run start:ui5
+          npm run start:ui5 &
 
       - name: Run tests (если нужно)
         run: |
