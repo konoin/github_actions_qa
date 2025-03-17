@@ -96,12 +96,14 @@ export const config: wdi5Config = {
             // maxInstances: 5,
             browserName: "chrome",
             "goog:chromeOptions": {
-                args:
-                    process.argv.indexOf("--headless") > -1
-                        ? ["--headless=new"]
-                        : process.argv.indexOf("--debug") > -1
-                            ? ["window-size=1440,800", "--auto-open-devtools-for-tabs"]
-                            : ["window-size=1440,800"]
+                args: [
+                    ...(process.argv.indexOf("--headless") > -1
+                      ? ["--headless=new"]
+                      : process.argv.indexOf("--debug") > -1
+                      ? ["window-size=1440,800", "--auto-open-devtools-for-tabs"]
+                      : ["window-size=1440,800"]),
+                    "--user-data-dir=/path/to/unique/directory" // Add unique user data dir argument here
+                  ]
             },
             acceptInsecureCerts: true
             // If outputDir is provided WebdriverIO can capture driver session logs
